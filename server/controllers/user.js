@@ -70,6 +70,6 @@ const postApiSignup = async (req, res) => {
              success: false,
              message: "Invalid credentials"
         })
-    }   }
+    }}
 
  export { postApiSignup, postApiLogin }
