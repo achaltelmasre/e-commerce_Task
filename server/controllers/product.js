@@ -65,28 +65,29 @@ const getApiProductId = async (req, res) => {
  }
 
  //put product:id
- const putApiProductId = async (req, res) => {
-    const {id} = req.params;
-  
-    const { name, description, price, image, category, brand, } = req.body;
-  
-      await Product.updateOne({_id: id}, {$set : {
-       name: name,
-       description: description,
-       price: price,
-       image: image,
-       category: category,
-       brand: brand,
-    }});
-  
-    const updatedProduct = await Product.findById(id);
-  
-     res.json({
-      success: true,
-      data: updatedProduct,
-      message: "Product update successfully"
-     }); 
-  }
+ const putApiProductId =  async (req, res) => {
+  const {id} = req.params;
+
+  const { name, description, price, image, category, brand, } = req.body;
+
+    await Product.updateOne({_id: id}, {$set : {
+     name: name,
+     description: description,
+     price: price,
+     image: image,
+     category: category,
+     brand: brand,
+  }});
+
+  const updatedProduct = await Product.findById(id);
+
+   res.json({
+    success: true,
+    data: updatedProduct,
+    message: "Product update successfully"
+   }); 
+}
+ 
  
   //get product search?query
   const getApiProductSearchquery = async (req, res) => {

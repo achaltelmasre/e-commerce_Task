@@ -5,7 +5,8 @@ dotenv.config();
 
 import { getApiHealth } from './controllers/health.js';
 import { postApiLogin, postApiSignup } from './controllers/user.js';
-import { getApiProductId, getApiProductSearchquery, getApiProducts, postApiProduct } from './controllers/product.js';
+import { getApiProductId, getApiProductSearchquery, getApiProducts, postApiProduct, putApiProductId } from './controllers/product.js';
+import {  postApiOrder, getApiOrder, getApiOrderId, getApiOrderUserId, patchApiOrderId } from './controllers/order.js';
 
 const app = express();
 app.use(express.json());
@@ -34,14 +35,30 @@ app.post('/api/product', postApiProduct);
 app.get('/api/products', getApiProducts);
 
 //put products:id
-app.put('/api/products', putApiProductId);
+app.put('/api/product/:id', putApiProductId);
 
-//get productUser:id
-app.get('/api/products/id', getApiProductId );
+//get product:id
+app.get('/api/product/:id', getApiProductId );
 
 //get product searchQuery
-app.get('/api/productsearchquery/id', getApiProductSearchquery);
+app.get('/api/products/search', getApiProductSearchquery);
 
+
+
+//post order
+app.post('/api/order', postApiOrder);
+
+//get order
+app.get('/api/orders', getApiOrder);
+
+//get order:id
+app.get('/api/order/:id', getApiOrderId);
+
+//get order/user:id
+app.get('/api/order/user/:id', getApiOrderUserId);
+
+//patch order:id
+app.patch('/api/order/:id', patchApiOrderId);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
