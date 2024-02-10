@@ -8,6 +8,11 @@ import Login from './views/Login/Login';
 import Signup from './views/Signup/Signup';
 import './index.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+
+
 const router = createBrowserRouter([
   {
     path:'/',

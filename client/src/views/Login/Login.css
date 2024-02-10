@@ -1,0 +1,12 @@
+.login-btn{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: rgb(255, 240, 23);;
+    color: white;
+ }
+ .address-link{
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+ }
