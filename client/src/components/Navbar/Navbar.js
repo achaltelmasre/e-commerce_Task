@@ -15,7 +15,7 @@ function Navbar() {
       <nav class="navbar navbar-expand-lg  p-3 nav ">
         <div class="container-fluid">
           <a class="navbar-brand fw-bold fs-4" href="#">
-              <span className="text-warning fst-italic fs-2 ">E-commerce  </span> 
+              <span className="text-warning fst-italic fs-2 ">E-commerce </span> 
                <span className="text-danger pt-3 ">Website</span>
           </a>
           <button
@@ -37,13 +37,13 @@ function Navbar() {
                 </Link>
               </li>
               <li class="nav-item ms-5">
-                <Link  to="/order" class="nav-link active" aria-current="page" href="#">
-                    Order
+                <Link  to="/addtransaction" class="nav-link active" aria-current="page" href="#">
+                    AddTransaction
                 </Link>
               </li>
               <li class="nav-item ms-5">
-                <Link  to="/Buypage" class="nav-link active" aria-current="page" >
-                   Buypage
+                <Link  to="/showtransaction" class="nav-link active" aria-current="page" >
+                  ShowTransaction
                 </Link>
               </li>
               <li class="nav-item ms-5">
@@ -75,6 +75,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
+
     </>
   );
 }

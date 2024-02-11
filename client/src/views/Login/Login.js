@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-
-import './Login.css';
+import "./Login.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -18,7 +17,6 @@ function Login (){
             password:password
         })
 
-        
         alert(response?.data?.message);
 
         if (response?.data?.success) {

@@ -24,7 +24,7 @@ function Home() {
 
     useEffect(() => {
         searchProducts();
-    }, [search]);
+    });
 
     const loadProduct = async () => {
         try {
@@ -38,7 +38,7 @@ function Home() {
 
     useEffect(() => {
         loadProduct();
-    }, []);
+    },[]);
 
     return (
         <>
@@ -53,8 +53,8 @@ function Home() {
                 />
                 <div className="product-container">
                     {
-                        products?.map((product, index) => {
-                            const { _id, name, description, price, image } = product;
+                        products?.map((products, index) => {
+                            const { _id, name, description, price, image } = products;
                             return (
                                 <ProductCard
                                     key={index}
