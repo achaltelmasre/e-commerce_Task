@@ -11,7 +11,7 @@ function Home() {
     const searchProducts = async () => {
         try {
             if (search === '') {
-                loadProduct();
+                loadProducts(); // Changed from loadProduct() to loadProducts()
                 return;
             }
 
@@ -24,11 +24,11 @@ function Home() {
 
     useEffect(() => {
         searchProducts();
-    });
+    }, [search]); // Added search as a dependency to trigger searchProducts when search state changes
 
-    const loadProduct = async () => {
+    const loadProducts = async () => { // Renamed loadProduct to loadProducts for consistency
         try {
-           const response = await axios.get('/api/products')
+            const response = await axios.get('/api/products');
             setProducts(response?.data?.data);
         } catch (error) {
             console.error('Error loading products:', error);
@@ -37,8 +37,8 @@ function Home() {
     };
 
     useEffect(() => {
-        loadProduct();
-    },[]);
+        loadProducts();
+    }, []);
 
     return (
         <>
@@ -53,11 +53,11 @@ function Home() {
                 />
                 <div className="product-container">
                     {
-                        products?.map((products, index) => {
-                            const { _id, name, description, price, image } = products;
+                        products?.map((product, index) => { // Changed variable name from products to product
+                            const { _id, name, description, price, image } = product; // Changed from products to product
                             return (
                                 <ProductCard
-                                    key={index}
+                                    key={_id} // Used _id as the key
                                     name={name}
                                     description={description}
                                     price={price}
